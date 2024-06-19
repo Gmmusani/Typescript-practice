@@ -1,0 +1,1 @@
+export let arr: string[] = ["Jamshed", "Mudassir", "Hamza"] 
