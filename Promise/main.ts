@@ -34,7 +34,7 @@ myPromise.then((res)=>{console.log(res)})
 let prom = new Promise((res, rej)=>{
     console.log("Promise pending");
     setTimeout(()=>{
-        let data = "";
+        let data = "GM";
         if (data){
             console.log("Promise resolved hogya");
             return res(data);
