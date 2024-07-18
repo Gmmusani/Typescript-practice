@@ -1,7 +1,6 @@
 // Implicit casting
 
-// let fullName = "Jhon";
-// fullName = 23 
+// let fullName: string = "Jhon";
 
 // explicit casting
 

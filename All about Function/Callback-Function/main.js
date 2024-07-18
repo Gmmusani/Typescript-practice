@@ -1,21 +1,69 @@
 // Callback Function
 // Function k argument k andar function dena call back function kehlata he.
-function hello(callback) {
-    callback("GM");
-}
-;
-// arrowFunc call ho rha he hello function me 
-var arrowFunc = function (name) {
-    console.log("hellow ".concat(name));
-};
-hello(arrowFunc);
+// function hello(callback: (name: string)=> void){
+//     callback("GM");
+// };
+// // arrowFunc call ho rha he hello function me 
+// let arrowFunc = (name: string)=>{
+//     console.log(`hellow ${name}`);
+// }
+// hello(arrowFunc)
 //// new example
-function getName(par1, par2) {
-    par1(par2);
+// function getName(par1: any, par2: string){
+//     par1(par2);
+// };
+// function myCallBack(name: string){
+//     console.log(`My name is ${name}`)
+// };
+// getName(myCallBack, "Ausaf")
+//
+// function cuttingSuit(callback: ()=> void){
+//     console.log('Cutting started...');
+//     setTimeout(()=>{
+//         console.log("Cutting Done");
+//         callback();
+//     }, 3000);
+// };
+// function stitching(callback: ()=> void){
+//     console.log("Stitching Started...");
+//     setTimeout(()=>{
+//         console.log("Stitching Done");
+//         callback();
+//     }, 5000);
+// };
+// function suitpress(){
+//     console.log("suit press started...")
+//     setTimeout(()=>{
+//         console.log("Suit press done")
+//         console.log("Congratulations, Suit is ready!!!");
+//     }, 2000);
+// };
+// cuttingSuit(()=>{
+//     stitching(()=>{
+//         suitpress();
+//     });
+// });
+////
+function getData(dataid, callback) {
+    console.log("getting data");
+    setTimeout(function () {
+        console.log("Data", dataid);
+        callback();
+    }, 2000);
 }
 ;
-function myCallBack(name) {
-    console.log("My name is ".concat(name));
-}
-;
-getName(myCallBack, "Ausaf");
+getData(1, function () {
+    getData(2, function () {
+        getData(3, function () {
+            console.log("done");
+        });
+    });
+});
+// function myCallBack(text: string) {
+//     console.log("inside myCallback " + text);
+// }
+// function callingFunction(initialText: string, callback: (text: string) => void)
+// {
+//     callback(initialText);
+// }
+// callingFunction("myText", myCallBack);
